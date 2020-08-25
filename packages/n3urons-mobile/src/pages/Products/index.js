@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 
-import ListProduct from '../../components/ProductList';
+import ProductList from '../../components/ProductList';
 import { Container } from './styles';
 
-const ProdutctList = () => {
+const Produtcts = () => {
   const [layoutMode, setLayoutMode] = useState('vertical');
 
   const [loading, setLoading] = useState(true);
@@ -75,10 +75,10 @@ const ProdutctList = () => {
   return (
     <Container>
       <>
-        <ListProduct mode={layoutMode} data={rows} loading={loading} />
+        <ProductList mode={layoutMode} data={rows} loading={loading} />
       </>
     </Container>
   );
 };
 
-export default ProdutctList;
+export default Produtcts;

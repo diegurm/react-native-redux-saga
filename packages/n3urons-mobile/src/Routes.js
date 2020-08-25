@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import NavigationService from './services/navigation';
 
-import ProdutctList from './pages/ProdutctList';
+import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
 
@@ -20,7 +20,7 @@ const Routes = () => {
             title: 'SportSHOP',
             animationEnabled: true,
           }}>
-          <Stack.Screen name="ProdutctList" component={ProdutctList} />
+          <Stack.Screen name="Products" component={Products} />
           <Stack.Screen name="ProductDetail" component={ProductDetail} />
           <Stack.Screen name="Checkout" component={Checkout} />
         </Stack.Navigator>
