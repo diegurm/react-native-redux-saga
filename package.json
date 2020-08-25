@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf ./packages/*/node_modules ./node_modules",
+    "clean-locks": "rm -rf ./packages/*/yarn.lock ./yarn.lock",
+    "reset": "yarn clean && yarn clean-locks",
+    "run-android": "lerna run android --scope='@n3urons/mobile'",
+    "run-ios": "lerna run ios --scope='@n3urons/mobile'",
+    "start-mobile": "lerna run start --scope='@n3urons/mobile'",
+    "start-web": "lerna run start --scope='@n3urons/web'",
+    "build-ios": "lerna run ios --variant=release --scope='@n3urons/mobile'",
+    "build-android": "lerna run android --variant=release --scope='@n3urons/mobile'",
+    "build-web": "lerna bootstrap && lerna run build --scope='@n3urons/web'"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "lerna": "^3.20.2",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=9.11.1",
+    "yarn": ">=1.4.2"
+  }
+}
