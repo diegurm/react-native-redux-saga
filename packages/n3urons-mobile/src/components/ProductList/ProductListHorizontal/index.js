@@ -9,13 +9,13 @@ const ProductListHorizontal = ({ data, loading, ...props }) => {
     <List
       {...props}
       data={data}
-      keyExtractor={(item) => String(item.productId)}
+      keyExtractor={(item) => String(item[props.key])}
       renderItem={({ item, index }) => (
         <>
           <ListItem
             onPress={() => {
               navigation.navigate('ProductDetail', {
-                productId: item.productId,
+                productId: item.id,
               });
             }}>
             <ProductItemHorizontal data={item} loading={loading} />

@@ -22,12 +22,12 @@ const ProductListVertical = ({ data, loading, ...props }) => {
           {...props}
           data={data}
           showsVerticalScrollIndicator={false}
-          keyExtractor={(item, index) => String(item.productId)}
+          keyExtractor={(item, index) => String(item[props.key])}
           renderItem={({ item }) => (
             <ListItem
               onPress={() =>
                 navigation.navigate('ProductDetail', {
-                  productId: item.productId,
+                  productId: item.id,
                 })
               }>
               <ProductItemVertical data={item} loading={false} />

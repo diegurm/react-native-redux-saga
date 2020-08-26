@@ -3,6 +3,7 @@ import { View, ScrollView, ActivityIndicator } from 'react-native';
 import { Card, Divider, useTheme } from 'react-native-paper';
 import ImageView from 'react-native-image-viewing';
 
+import api from '../../services/api';
 import ImageList from '../../components/ImageList';
 import {
   Container,
@@ -21,23 +22,17 @@ const ProductDetail = ({ navigation, route }) => {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState();
 
+  const loadData = async () => {
+    setLoading(true);
+
+    const { data } = await api.get(`/products/${productId}`);
+    setProduct({ ...data });
+
+    setLoading(false);
+  };
+
   useEffect(() => {
-    setTimeout(() => {
-      setProduct({
-        productId: 1,
-        name:
-          'Camisa Juventus Away 20/21 s/n° Jogador Adidas Masculina - Marinho',
-        price: 349.99,
-        sizes: ['P', 'M', 'G', 'GG'],
-        photos: [
-          'https://static.netshoes.com.br/produtos/camisa-juventus-away-2021-sn-jogador-adidas-masculina/12/NQQ-3135-012/NQQ-3135-012_zoom1.jpg',
-          'https://static.netshoes.com.br/produtos/camisa-juventus-away-2021-sn-jogador-adidas-masculina/12/NQQ-3135-012/NQQ-3135-012_zoom2.jpg',
-          'https://static.netshoes.com.br/produtos/camisa-juventus-away-2021-sn-jogador-adidas-masculina/12/NQQ-3135-012/NQQ-3135-012_zoom3.jpg',
-          'https://static.netshoes.com.br/produtos/camisa-juventus-away-2021-sn-jogador-adidas-masculina/12/NQQ-3135-012/NQQ-3135-012_zoom4.jpg',
-        ],
-      });
-      setLoading(false);
-    }, 1500);
+    loadData();
   }, [productId]);
 
   return (
