@@ -43,7 +43,7 @@ export const RadioViewButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
-    props?.isChecked ? props?.color || '#999' : 'transparent'};
+    props?.actived ? props?.color || '#999' : 'transparent'};
   border-color: #ccc;
   border-width: 1px;
   border-radius: 5px;

@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" />
       <PaperProvider theme={theme}>
         <Routes />
       </PaperProvider>
