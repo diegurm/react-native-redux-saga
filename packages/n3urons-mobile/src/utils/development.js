@@ -1,4 +1,4 @@
-export default () => {
+export const isDevelopment = () => {
   if (typeof __DEV__ !== 'undefined') {
     return __DEV__;
   }

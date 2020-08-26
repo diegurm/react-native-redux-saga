@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import navigation from '../../../services/navigation';
 import ProductItemVertical from '../../ProductItem/ProductItemVertical';
 import { List, ListItem } from './styles';
 
-const ProductListVertical = ({ data, loading, ...props }) => {
+const ProductListVertical = () => {
+  const { items, loading } = useSelector((state) => state.products);
+
   return (
     <>
       {loading ? (
@@ -19,10 +22,9 @@ const ProductListVertical = ({ data, loading, ...props }) => {
         />
       ) : (
         <List
-          {...props}
-          data={data}
+          data={items}
           showsVerticalScrollIndicator={false}
-          keyExtractor={(item, index) => String(item[props.key])}
+          keyExtractor={(item, index) => String(item.id)}
           renderItem={({ item }) => (
             <ListItem
               onPress={() =>

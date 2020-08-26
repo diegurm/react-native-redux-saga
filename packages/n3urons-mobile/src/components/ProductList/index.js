@@ -1,15 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import ProductListVertical from './ProductListVertical';
 import ProductListHorizontal from './ProductListHorizontal';
 
-const ProductList = ({ mode = 'vertical', data, loading, ...props }) => {
+const ProductList = () => {
+  const { layoutMode } = useSelector((state) => state.products);
+
   return (
     <>
-      {mode === 'vertical' ? (
-        <ProductListVertical {...props} data={data} loading={loading} />
+      {layoutMode === 'vertical' ? (
+        <ProductListVertical />
       ) : (
-        <ProductListHorizontal {...props} data={data} loading={loading} />
+        <ProductListHorizontal />
       )}
     </>
   );
