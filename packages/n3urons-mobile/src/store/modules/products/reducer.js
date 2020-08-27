@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 import {
   STORE_PRODUCTS,
   SET_PRODUCT_STATUS,

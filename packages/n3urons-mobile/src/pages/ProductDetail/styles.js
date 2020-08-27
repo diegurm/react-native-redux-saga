@@ -53,6 +53,7 @@ export const AddButton = styled(RectButton)`
   align-items: center;
   position: relative;
   height: 44px;
+  margin: 16px;
 `;
 
 export const AddButtonText = styled.Text`

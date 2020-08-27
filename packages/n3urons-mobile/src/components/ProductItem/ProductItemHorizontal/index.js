@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme } from 'react-native-paper';
 
+import { formatPrice } from '../../../utils/format';
 import {
   Product,
   ProductImage,
@@ -23,7 +24,7 @@ const ProductItemHorizontal = ({ data }) => {
         <ProductTitle>{data?.name}</ProductTitle>
         <ProdutcActions>
           <ProductPrice color={theme.colors.primary}>
-            {data?.price}
+            {formatPrice(data?.price)}
           </ProductPrice>
         </ProdutcActions>
       </ProductWrapper>
