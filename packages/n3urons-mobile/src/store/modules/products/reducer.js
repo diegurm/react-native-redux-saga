@@ -1,4 +1,9 @@
-import { STORE_PRODUCTS, SET_PRODUCT_STATUS } from './constants';
+import {
+  STORE_PRODUCTS,
+  SET_PRODUCT_STATUS,
+  SET_LOADING,
+  SET_LAYOUT_MODE,
+} from './constants';
 
 const INITIAL_STATE = {
   loading: true,
@@ -11,8 +16,13 @@ export default function products(state = { ...INITIAL_STATE }, action) {
     case STORE_PRODUCTS: {
       return {
         ...state,
-        loading: false,
         items: [...action.products],
+      };
+    }
+    case SET_LOADING: {
+      return {
+        ...state,
+        loading: action.loading,
       };
     }
     case SET_PRODUCT_STATUS: {
@@ -25,6 +35,12 @@ export default function products(state = { ...INITIAL_STATE }, action) {
             draft[productIndex].loading = Number(action.status);
           }
         }),
+      };
+    }
+    case SET_LAYOUT_MODE: {
+      return {
+        ...state,
+        layoutMode: action.layoutMode,
       };
     }
     default:

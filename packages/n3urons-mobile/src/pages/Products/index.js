@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import * as ProductsActions from '../../store/modules/products/actions';
 import ProductList from '../../components/ProductList';
-import { Container, RadioView, RadioViewButton } from './styles';
+import LayoutModeButton from '../../components/LayoutModeButton';
+import { Container, LayoutMode } from './styles';
 
 const Produtcts = () => {
   const dispatch = useDispatch();
@@ -14,14 +14,13 @@ const Produtcts = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
-  const onChangeSearch = (query) => {
-    console.log(query);
-    setSearchQuery(query);
+  const onChangeSearch = () => {
+    dispatch(ProductsActions.loadProducts(searchQuery));
   };
 
   useEffect(() => {
-    dispatch(ProductsActions.loadProducts(searchQuery));
-  }, [searchQuery]);
+    dispatch(ProductsActions.loadProducts());
+  }, []);
 
   return (
     <Container>
@@ -33,33 +32,16 @@ const Produtcts = () => {
             backgroundColor: '#FFF',
             padding: 16,
           }}>
-          <RadioView>
-            <RadioViewButton
-              color="#333"
-              actived={layoutMode === 'vertical'}
-              onPress={() => {}}>
-              <Icon
-                name="view-module"
-                size={24}
-                color={layoutMode === 'vertical' ? '#FFF' : '#333'}
-              />
-            </RadioViewButton>
-            <RadioViewButton
-              color="#333"
-              actived={layoutMode === 'horizontal'}
-              onPress={() => {}}>
-              <Icon
-                name="view-list"
-                size={24}
-                color={layoutMode === 'horizontal' ? '#FFF' : '#333'}
-              />
-            </RadioViewButton>
-          </RadioView>
+          <LayoutMode>
+            <LayoutModeButton mode="vertical" />
+            <LayoutModeButton mode="horizontal" />
+          </LayoutMode>
           <Searchbar
             style={{ flex: 1 }}
             placeholder="Pesquisar..."
-            onChangeText={onChangeSearch}
+            onChangeText={setSearchQuery}
             value={searchQuery}
+            onSubmitEditing={onChangeSearch}
           />
         </View>
 

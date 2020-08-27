@@ -32,21 +32,9 @@ export const EmptySearchInfo = styled.Text`
   text-align: center;
 `;
 
-export const RadioView = styled.View`
+export const LayoutMode = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
-
-export const RadioViewButton = styled(RectButton)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) =>
-    props?.actived ? props?.color || '#999' : 'transparent'};
-  border-color: #ccc;
-  border-width: 1px;
-  border-radius: 5px;
-  height: 44px;
-  width: 44px;
+  margin-right: 8px;
 `;

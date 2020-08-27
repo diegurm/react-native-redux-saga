@@ -1,9 +1,15 @@
-import { LOAD_PRODUCTS, STORE_PRODUCTS, SET_PRODUCT_STATUS } from './constants';
+import {
+  LOAD_PRODUCTS,
+  STORE_PRODUCTS,
+  SET_PRODUCT_STATUS,
+  SET_LOADING,
+  SET_LAYOUT_MODE,
+} from './constants';
 
-export function loadProducts(searhText = '') {
+export function loadProducts(searchText = '') {
   return {
     type: LOAD_PRODUCTS,
-    searhText,
+    searchText,
   };
 }
 
@@ -19,5 +25,19 @@ export function setProductStatus(id, status) {
     type: SET_PRODUCT_STATUS,
     id,
     status,
+  };
+}
+
+export function setLoading(loading) {
+  return {
+    type: SET_LOADING,
+    loading,
+  };
+}
+
+export function setLayoutMode(layoutMode) {
+  return {
+    type: SET_LAYOUT_MODE,
+    layoutMode,
   };
 }
