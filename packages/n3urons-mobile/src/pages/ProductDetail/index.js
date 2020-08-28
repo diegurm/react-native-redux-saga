@@ -90,6 +90,7 @@ const ProductDetail = ({ navigation, route }) => {
             </ProductWrapper>
 
             <AddButton
+              color={theme.colors.primary}
               onPress={() => !product?.loading && handleAddProduct(product.id)}>
               <ProductAmount>
                 {product?.loading ? (

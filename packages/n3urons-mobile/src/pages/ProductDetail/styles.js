@@ -27,25 +27,8 @@ export const ProductPrice = styled.Text`
   color: ${(props) => (props.color ? props.color : '#333')};
 `;
 
-export const BuyButton = styled(RectButton)`
-  background: #30a979;
-  border-radius: 4px;
-  flex-direction: row;
-  overflow: hidden;
-  margin-top: 10px;
-  align-items: center;
-  position: relative;
-  height: 44px;
-`;
-
-export const BuyButtonText = styled.Text`
-  flex: 1;
-  text-align: center;
-  font-weight: bold;
-  color: #fff;
-`;
 export const AddButton = styled(RectButton)`
-  background: #e4eae8;
+  background: ${(props) => (props.color ? props.color : '#333')};
   border-radius: 4px;
   flex-direction: row;
   overflow: hidden;
@@ -60,8 +43,9 @@ export const AddButtonText = styled.Text`
   flex: 1;
   text-align: center;
   font-weight: bold;
-  color: #33cb8e;
+  color: #fff;
 `;
+
 export const ProductAmount = styled.View`
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -69,7 +53,7 @@ export const ProductAmount = styled.View`
   justify-content: center;
   align-items: center;
   align-self: flex-start;
-  background: rgba(0, 0, 0, 0.17);
+  background: rgba(0, 0, 0, 0.5);
   height: 44px;
   width: 60px;
   position: absolute;

@@ -1,10 +1,8 @@
 import produce from 'immer';
 
 import {
-  ADD_REQUEST,
   ADD_SUCCESS,
   REMOVE,
-  UPDATE_AMOUNT_REQUEST,
   UPDATE_AMOUNT_SUCCESS,
 } from './constants';
 
