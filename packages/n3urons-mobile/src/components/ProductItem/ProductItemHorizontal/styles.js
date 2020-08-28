@@ -1,10 +1,9 @@
 import styled from 'styled-components/native';
 import { IconButton, Card } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { RectButton } from 'react-native-gesture-handler';
 
 export const Product = styled.View`
-  background: #fff;
+  background: ${(props) => (props.color ? props.color : '#fff')};
   border-radius: 4px;
   elevation: 1;
   flex-direction: row;
@@ -38,6 +37,7 @@ export const ProductTitle = styled.Text.attrs({
 })`
   font-size: 13px;
   margin: 4px 0 2px;
+  color: ${(props) => (props.color ? props.color : '#333')};
 `;
 
 export const ProdutcActions = styled.View`

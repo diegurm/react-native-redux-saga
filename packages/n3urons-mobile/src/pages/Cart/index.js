@@ -89,8 +89,8 @@ const Cart = () => {
       {!cart.length ? (
         <EmptyCart>
           <EmptyWrapper>
-            <EmptyHeader>Oops...</EmptyHeader>
-            <EmptyInfo>
+            <EmptyHeader color={theme.colors.text}>Oops...</EmptyHeader>
+            <EmptyInfo color={theme.colors.text}>
               Parece que seu carrinho de compras está vazio!
             </EmptyInfo>
             <StartShoppingButton
@@ -113,7 +113,9 @@ const Cart = () => {
                 <ProductInfo>
                   <AboutProduct>
                     <AboutWrapper>
-                      <ProductTitle>{product?.name}</ProductTitle>
+                      <ProductTitle color={theme.colors.text}>
+                        {product?.name}
+                      </ProductTitle>
                       <ProductPrice>{product?.priceFormatted}</ProductPrice>
                     </AboutWrapper>
                     <DeleteButton onPress={() => handleRemove(product)}>
@@ -130,7 +132,9 @@ const Cart = () => {
                           color={theme.colors.primary}
                         />
                       </AmountButton>
-                      <ProductAmountText>{product?.amount}</ProductAmountText>
+                      <ProductAmountText color={theme.colors.text}>
+                        {product?.amount}
+                      </ProductAmountText>
                       <AmountButton onPress={() => handleIncrement(product)}>
                         <Icon
                           name="add-circle-outline"

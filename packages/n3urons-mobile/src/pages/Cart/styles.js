@@ -18,11 +18,13 @@ export const EmptyHeader = styled.Text`
   text-align: center;
   font-size: 40px;
   font-weight: bold;
+  color: ${(props) => props?.color || '#000'};
 `;
 
 export const EmptyInfo = styled.Text`
   font-size: 16px;
   margin: 4px 0 16px;
+  color: ${(props) => props?.color || '#000'};
 `;
 
 export const StartShoppingButton = styled(RectButton)`
@@ -79,6 +81,7 @@ export const AboutWrapper = styled.View`
 export const ProductTitle = styled.Text`
   font-size: 16px;
   margin: 4px 0 2px;
+  color: ${(props) => props?.color || '#000'};
 `;
 
 export const ProductPrice = styled.Text`
@@ -113,6 +116,7 @@ export const ProductAmountText = styled.Text`
   margin: 0 12px;
   width: 20px;
   text-align: center;
+  color: ${(props) => props?.color || '#000'};
 `;
 
 export const ProductSubTotal = styled.Text`

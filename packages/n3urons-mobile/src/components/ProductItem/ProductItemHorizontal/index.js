@@ -18,10 +18,10 @@ const ProductItemHorizontal = ({ data }) => {
   const theme = useTheme();
 
   return (
-    <Product>
+    <Product color={theme.colors.surface}>
       <ProductImage source={{ uri: data?.photos[0] }} />
       <ProductWrapper>
-        <ProductTitle>{data?.name}</ProductTitle>
+        <ProductTitle color={theme.colors.text}>{data?.name}</ProductTitle>
         <ProdutcActions>
           <ProductPrice color={theme.colors.primary}>
             {formatPrice(data?.price)}

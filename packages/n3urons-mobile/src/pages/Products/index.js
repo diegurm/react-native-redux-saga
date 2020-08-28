@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { View } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import { Searchbar, useTheme } from 'react-native-paper';
 
 import * as ProductsActions from '../../store/modules/products/actions';
 import ProductList from '../../components/ProductList';
@@ -9,6 +9,7 @@ import LayoutModeButton from '../../components/LayoutModeButton';
 import { Container, LayoutMode } from './styles';
 
 const Produtcts = () => {
+  const theme = useTheme();
   const dispatch = useDispatch();
   const { layoutMode } = useSelector((state) => state.products);
 
@@ -29,7 +30,7 @@ const Produtcts = () => {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            backgroundColor: '#FFF',
+            backgroundColor: theme.colors.surface,
             padding: 16,
           }}>
           <LayoutMode>

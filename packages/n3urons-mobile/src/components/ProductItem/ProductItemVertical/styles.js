@@ -3,7 +3,7 @@ import Shimmer from 'react-native-shimmer-placeholder';
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Product = styled.View`
-  background: #fff;
+  background: ${(props) => (props.color ? props.color : '#fff')};
   border-radius: 4px;
   elevation: 1;
   flex-grow: 1;
@@ -19,6 +19,7 @@ export const ProductImage = styled.Image.attrs({
   display: flex;
   flex: 1;
   margin: 8px;
+  opacity: 0.8
 `;
 
 export const PlaceHolderImage = styled(Shimmer)`
@@ -32,6 +33,7 @@ export const ProductTitle = styled.Text.attrs({
 })`
   font-size: 13px;
   margin: 4px 0 2px;
+  color: ${(props) => (props.color ? props.color : '#fff')};
 `;
 
 export const PlaceHolderTitle = styled(Shimmer)`

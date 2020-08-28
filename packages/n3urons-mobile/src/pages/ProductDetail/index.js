@@ -82,7 +82,9 @@ const ProductDetail = ({ navigation, route }) => {
             />
             <Divider />
             <ProductWrapper>
-              <ProductTitle>{product?.name}</ProductTitle>
+              <ProductTitle color={theme.colors.text}>
+                {product?.name}
+              </ProductTitle>
 
               <ProductPrice color={theme.colors.primary}>
                 {formatPrice(product?.price)}

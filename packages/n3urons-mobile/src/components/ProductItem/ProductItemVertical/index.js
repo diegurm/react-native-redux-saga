@@ -33,10 +33,12 @@ const ProductItemVertical = ({ data, loading }) => {
         </>
       ) : (
         <>
-          <Product>
+          <Product color={theme.colors.surface}>
             <ProductImage source={{ uri: data?.photos[0] }} />
             <ProductWrapper>
-              <ProductTitle>{data?.name}</ProductTitle>
+              <ProductTitle color={theme.colors.text}>
+                {data?.name}
+              </ProductTitle>
               <ProductPrice color={theme.colors.primary}>
                 {formatPrice(data?.price)}
               </ProductPrice>

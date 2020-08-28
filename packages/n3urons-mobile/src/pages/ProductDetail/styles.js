@@ -16,6 +16,7 @@ export const ProductTitle = styled.Text`
   font-size: 16px;
   text-align: center;
   margin: 4px 0 2px;
+  color: ${(props) => props?.color || '#000'};
 `;
 
 export const ProductPrice = styled.Text`
