@@ -5,7 +5,7 @@ import {
   DefaultTheme,
   DarkTheme,
 } from '@react-navigation/native';
-import { useTheme } from 'react-native-paper';
+import { IconButton, useTheme } from 'react-native-paper';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -27,7 +27,9 @@ const Routes = () => {
 
   return (
     <>
-      <NavigationContainer theme={navigationTheme} ref={NavigationService.navigationRef}>
+      <NavigationContainer
+        theme={navigationTheme}
+        ref={NavigationService.navigationRef}>
         <Drawer.Navigator
           drawerContent={(props) => <DrawerContent {...props} />}>
           <Drawer.Screen name="Root" children={RootStack} />
@@ -40,10 +42,15 @@ const Routes = () => {
 const RootStack = () => {
   return (
     <Stack.Navigator
-      screenOptions={{
-        headerBackTitleVisible: false,
-        title: 'SportSHOP',
-        animationEnabled: true,
+      screenOptions={({ navigation }) => {
+        return {
+          headerBackTitleVisible: false,
+          title: 'SportSHOP',
+          animationEnabled: true,
+          headerLeft: () => (
+            <IconButton icon="menu" onPress={() => navigation.openDrawer()} />
+          ),
+        };
       }}>
       <Stack.Screen
         name="Products"

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Caption, Title } from 'react-native-paper';
 import Shimmer from 'react-native-shimmer-placeholder';
 import { RectButton } from 'react-native-gesture-handler';
 
@@ -19,7 +20,7 @@ export const ProductImage = styled.Image.attrs({
   display: flex;
   flex: 1;
   margin: 8px;
-  opacity: 0.8
+  opacity: 0.8;
 `;
 
 export const PlaceHolderImage = styled(Shimmer)`
@@ -28,12 +29,16 @@ export const PlaceHolderImage = styled(Shimmer)`
   align-self: center;
 `;
 
-export const ProductTitle = styled.Text.attrs({
+export const ProductTitle = styled(Title).attrs({
   numberOfLines: 3,
 })`
   font-size: 13px;
+  line-height: 16px;
   margin: 4px 0 2px;
-  color: ${(props) => (props.color ? props.color : '#fff')};
+`;
+export const ProductBrand = styled(Caption)`
+  font-size: 12px;
+  text-transform: uppercase;
 `;
 
 export const PlaceHolderTitle = styled(Shimmer)`

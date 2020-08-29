@@ -7,6 +7,7 @@ import {
   ProductImage,
   ProductWrapper,
   ProductTitle,
+  ProductBrand,
   ProdutcActions,
   ProductPrice,
   ProductUnity,
@@ -21,7 +22,8 @@ const ProductItemHorizontal = ({ data }) => {
     <Product color={theme.colors.surface}>
       <ProductImage source={{ uri: data?.photos[0] }} />
       <ProductWrapper>
-        <ProductTitle color={theme.colors.text}>{data?.name}</ProductTitle>
+        <ProductTitle>{data?.name}</ProductTitle>
+        <ProductBrand> {data?.brand}</ProductBrand>
         <ProdutcActions>
           <ProductPrice color={theme.colors.primary}>
             {formatPrice(data?.price)}

@@ -40,7 +40,7 @@ const DrawerContent = (props) => {
           <Caption style={styles.caption}>@diegurm</Caption>
         </View>
 
-        <Drawer.Section title="Preferences">
+        <Drawer.Section>
           <TouchableRipple onPress={toggleTheme}>
             <View style={styles.preference}>
               <Text>Dark Theme</Text>

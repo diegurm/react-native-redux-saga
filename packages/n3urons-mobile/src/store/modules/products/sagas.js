@@ -10,7 +10,11 @@ function* loadProducts(action) {
     const { data } = yield call(api.get, `/products`);
 
     const products = action.searchText
-      ? [...data.filter(({ name }) => name.includes(action.searchText))]
+      ? [
+          ...data.filter(({ name }) =>
+            name?.toUpperCase().includes(action?.searchText?.toUpperCase()),
+          ),
+        ]
       : [...data];
 
     yield put(Actions.storeProducts(products));
@@ -18,7 +22,6 @@ function* loadProducts(action) {
   } catch (e) {
     // yield put({ type: FAILURE, error: e.message });
     yield put(Actions.setLoading(false));
-    console.log('error', e);
   }
 }
 

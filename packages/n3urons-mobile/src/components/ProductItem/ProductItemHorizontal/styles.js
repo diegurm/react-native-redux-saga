@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { IconButton, Card } from 'react-native-paper';
+import { IconButton, Caption, Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const Product = styled.View`
@@ -32,12 +32,18 @@ export const ProductWrapper = styled.View`
   padding: 8px;
 `;
 
-export const ProductTitle = styled.Text.attrs({
+export const ProductTitle = styled(Title).attrs({
   numberOfLines: 3,
 })`
   font-size: 13px;
+  line-height: 13px;
   margin: 4px 0 2px;
-  color: ${(props) => (props.color ? props.color : '#333')};
+`;
+
+export const ProductBrand = styled(Caption)`
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
 `;
 
 export const ProdutcActions = styled.View`

@@ -8,6 +8,7 @@ import {
   ProductWrapper,
   ProductTitle,
   ProductPrice,
+  ProductBrand,
   ProductUnity,
   PlaceHolderImage,
   PlaceHolderTitle,
@@ -36,9 +37,8 @@ const ProductItemVertical = ({ data, loading }) => {
           <Product color={theme.colors.surface}>
             <ProductImage source={{ uri: data?.photos[0] }} />
             <ProductWrapper>
-              <ProductTitle color={theme.colors.text}>
-                {data?.name}
-              </ProductTitle>
+              <ProductTitle>{data?.name}</ProductTitle>
+              <ProductBrand> {data?.brand}</ProductBrand>
               <ProductPrice color={theme.colors.primary}>
                 {formatPrice(data?.price)}
               </ProductPrice>
