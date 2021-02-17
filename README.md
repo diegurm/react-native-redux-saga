@@ -1,8 +1,3 @@
-<h1 align="center">
- Challange N3urons
-  
-</h1>
-
 <h4 align="center">
   SportSHOP com React Native and Redux.
 </h4>
@@ -37,10 +32,10 @@
 Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com), [Node.js v10.16][nodejs] ou superior + [Yarn v1.13][yarn] ou superior instalado no seu computador. Na linha de comando:
 ```bash
 # Clone this repository
-$ git clone https://github.com/diegurm//n3urons-challange
+$ git clone https://github.com/diegurm//sportshop-challange
 
 # Go into the repository
-$ cd n3urons-challange
+$ cd sportshop-challange
 
 # Install dependencies
 $ yarn install
