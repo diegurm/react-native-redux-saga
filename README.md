@@ -1,10 +1,10 @@
 <h4 align="center">
-  SportSHOP com React Native and Redux.
+ Aplicativo de ecommerce com React Native e Redux.
 </h4>
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#memo-license">Licença</a>
 </p>
 
 <p align="center">
@@ -32,10 +32,10 @@
 Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com), [Node.js v10.16][nodejs] ou superior + [Yarn v1.13][yarn] ou superior instalado no seu computador. Na linha de comando:
 ```bash
 # Clone this repository
-$ git clone https://github.com/diegurm//sportshop-challange
+$ git clone https://github.com/diegurm//react-native-redux-saga
 
 # Go into the repository
-$ cd sportshop-challange
+$ cd react-native-redux-saga
 
 # Install dependencies
 $ yarn install
@@ -50,7 +50,7 @@ $ yarn run-ios
 $ yarn run-android
 ```
 
-## :memo: License
+## :memo: Licença
 
 This project is under the MIT license. See the [LICENSE](https://github.com/diegurm/rocketshoes-react-native/blob/master/LICENSE) for more information.
 
